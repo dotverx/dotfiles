@@ -102,7 +102,9 @@ source $ZSH/oh-my-zsh.sh
 
 # eval "$(mise activate zsh)"
 
-XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_CONFIG_HOME="${HOME}/.config"
+
+export EDITOR=vim
 
 export VIRTUAL_ENV_DISABLE_PROMPT=0
 function virtualenv_prompt_info {
@@ -133,3 +135,8 @@ yazi() {
     set -- "${1%.}"
     [ "$1" != "$PWD" ] && [ -d "$1" ] && builtin cd -- "$1"
 }
+
+if [ -z "${SSH_CONNECTION}" ]; then
+    export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+fi
+
