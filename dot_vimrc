@@ -1,0 +1,91 @@
+set list
+set listchars=tab:>\|,trail:\|,lead:\|,nbsp:\|,precedes:<,extends:>
+set smartindent
+set smarttab
+set autoindent
+set copyindent
+set preserveindent
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set splitbelow
+set splitright
+set virtualedit=block
+set wrap
+set linebreak
+set breakindent
+
+set formatoptions+=j
+set formatoptions+=n
+set hidden
+set autoread
+set confirm
+
+set scrolloff=4
+set sidescrolloff=3
+
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+set wildignorecase
+
+set showtabline=2
+
+set showmatch
+
+set updatetime=500
+set ttimeout
+set ttimeoutlen=10
+
+set cursorline
+set number
+set relativenumber
+
+if has ('clipboard')
+    set clipboard=unnamedplus
+endif
+
+if has ('termguicolors')
+    set termguicolors
+    colorscheme habamax
+else
+    colorscheme pablo
+endif
+
+if has('persistent_undo')
+    let s:candidates = []
+    if exists('$XDG_CACHE_HOME') && !empty($XDG_CACHE_HOME)
+        call add(s:candidates, $XDG_CACHE_HOME . '/vim/undo')
+    endif
+    if exists('$HOME') && !empty($HOME)
+        call add(s:candidates, $HOME . '/.cache/vim/undo')
+    endif
+    if exists('$TEMP') && !empty($TEMP)
+        call add(s:candidates, $TEMP . '/vim-undo')
+    endif
+    let s:undodir = ''
+    for s:dir in s:candidates
+        let s:dir = expand(s:dir)
+        if !isdirectory(s:dir)
+            call mkdir(s:dir, 'p')
+        endif
+        call setfperm(s:dir, 'rwx------')
+        if getftype(s:dir) ==# 'dir' && getfperm(s:dir) ==# 'rwx------'
+            let s:undodir = s:dir
+            break
+        endif
+    endfor
+    if empty(s:undodir)
+        set noundofile
+        echo 'No undodir with permissions 0700'
+    endif
+    let &undodir = s:undodir
+    set undofile
+endif
+
+call plug#begin()
+Plug 'liuchengxu/vim-which-key'
+call plug#end()
