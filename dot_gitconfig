@@ -7,3 +7,6 @@
 [init]
     defaultBranch = main
 
+[alias]
+    difft = -c diff.external=difft diff
+
