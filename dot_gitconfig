@@ -1,6 +1,9 @@
-[credential]
-	helper = /usr/lib/git-core/git-credential-libsecret
-[init]
-	defaultBranch = main
 [user]
-	useConfigOnly = true
+    useConfigOnly = true
+
+[credential]
+    helper = /usr/lib/git-core/git-credential-libsecret
+
+[init]
+    defaultBranch = main
+
