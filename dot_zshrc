@@ -1,6 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="frisk"
+ZSH_THEME="my-frisk"
 
 plugins=(git pipenv virtualenv mise)
 
