@@ -1,2 +1,6 @@
 [tools]
+helm = "latest"
 java = "latest"
+k9s = "latest"
+kubectl = "latest"
+maven = "latest"
