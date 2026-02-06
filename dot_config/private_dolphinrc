@@ -1,0 +1,37 @@
+MenuBar=Disabled
+
+[ContentDisplay]
+UseShortRelativeDates=false
+
+[DetailsMode]
+PreviewSize=22
+RightPadding=37
+
+[General]
+FilterBar=true
+RememberOpenedTabs=false
+ShowFullPath=true
+ShowStatusBar=FullWidth
+Version=202
+ViewPropsTimestamp=2026,1,6,19,14,31.03
+
+[InformationPanel]
+dateFormat=ShortFormat
+showHovered=false
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=16
+
+[MainWindow]
+MenuBar=Disabled
+
+[PlacesPanel]
+IconSize=16
+
+[PreviewSettings]
+Plugins=ffmpegthumbnailer,appimagethumbnail,audiothumbnail,glycin-heif,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,glycin-image-rs,jpegthumbnail,glycin-jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,gsf-office,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,glycin-svg,svgthumbnail,textthumbnail,ffmpegthumbs
+
+[Search]
+SearchTool=Baloo
+What=FileContents
