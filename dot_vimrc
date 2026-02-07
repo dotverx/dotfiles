@@ -1,3 +1,9 @@
+filetype plugin indent on
+
+call plug#begin()
+Plug 'tpope/vim-commentary'
+call plug#end()
+
 set list
 set listchars=tab:>\|,trail:\|,lead:\|,nbsp:\|,precedes:<,extends:>
 set smartindent
@@ -85,10 +91,4 @@ if has('persistent_undo')
     let &undodir = s:undodir
     set undofile
 endif
-
-filetype plugin indent on
-
-call plug#begin()
-Plug 'tpope/vim-commentary'
-call plug#end()
 
