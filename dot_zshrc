@@ -46,3 +46,21 @@ if [ -z "${SSH_CONNECTION}" ]; then
     export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 fi
 
+cht () {
+    if [[ "${#}" -eq 0 ]]; then
+        printf "%s\n" \
+            "Usage: cht <topic> [query...]" \
+            "Examples: cht tar | cht tar extract | cht tar~extract | cht go/zip lists | cht '~extract'" \
+            >&2
+        return 1
+    fi
+    # change spaces to + for request
+    # it breaks on special characters ?#%&
+    local q="${*// /+}"
+    local url="https://cht.sh" 
+    if [[ -t 1 ]] && command -v less >/dev/null; then
+        curl -fsSL "${url}/${q}" | less -R
+    else
+        curl -fsSL "${url}/${q}"
+    fi
+}
