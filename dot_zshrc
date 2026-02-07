@@ -10,6 +10,9 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 
 export EDITOR=vim
 
+export PAGER=less
+export LESS="-R -X -M -i"
+
 export VIRTUAL_ENV_DISABLE_PROMPT=0
 function virtualenv_prompt_info {
     [ "$VIRTUAL_ENV" ] && echo "[$VIRTUAL_ENV] "
@@ -62,3 +65,4 @@ cht () {
         curl -fsSL "${url}/${q}"
     fi
 }
+
