@@ -90,6 +90,5 @@ filetype plugin indent on
 
 call plug#begin()
 Plug 'tpope/vim-commentary'
-Plug 'liuchengxu/vim-which-key'
 call plug#end()
 
