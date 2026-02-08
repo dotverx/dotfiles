@@ -51,6 +51,7 @@ set number
 set relativenumber
 
 let g:netrw_liststyle=3
+set path=.,,**
 
 if has ('clipboard')
     set clipboard=unnamedplus
