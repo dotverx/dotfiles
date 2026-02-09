@@ -57,6 +57,8 @@ let g:netrw_banner=0
 let g:netrw_browse_split=4
 " splits open on the right
 let g:netrw_altv=1
+" show line numbers change default nonu to nu
+let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
 
 " search list for find, etc.
 " . directory of the buffer's file location
