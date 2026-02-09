@@ -50,7 +50,18 @@ set cursorline
 set number
 set relativenumber
 
+" tree style
 let g:netrw_liststyle=3
+let g:netrw_banner=0
+" open file in the last non-netrw window
+let g:netrw_browse_split=4
+" splits open on the right
+let g:netrw_altv=1
+
+" search list for find, etc.
+" . directory of the buffer's file location
+" <empty between commas> current working directory (pwd)
+" ** recurse into subdirectories
 set path=.,,**
 
 if has ('clipboard')
