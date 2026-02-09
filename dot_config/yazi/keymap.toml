@@ -1,0 +1,5 @@
+[[mgr.prepend_keymap]]
+on   = [ ",", "l" ]
+run  = "linemode mdate_perm_own"
+desc = "Restore custom linemode (mdate+perm+own)"
+

@@ -1,0 +1,13 @@
+[mgr]
+ratio = [1, 5, 2]
+# check init.lua for definition
+linemode = "mdate_perm_own"
+show_hidden = true
+
+[open]
+prepend_rules = [
+  { mime = "text/html", use = [ "edit", "open", "reveal" ] },
+  { url = "*.html", use = [ "edit", "open", "reveal" ] },
+  { url = "*.htm", use = [ "edit", "open", "reveal" ] },
+]
+
