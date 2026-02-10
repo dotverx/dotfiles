@@ -7,7 +7,7 @@ user_pref("mail.uifontsize", 13);
 // GENERAL
 user_pref("mailnews.start_page.enabled", false);
 user_pref("mail.shell.checkDefaultClient", false);
-user_pref("mail.minimizeToTray", true);
+// user_pref("mail.minimizeToTray", true);
 user_pref("font.name.sans-serif.x-western", "sans-serif");
 user_pref("font.size.variable.x-western", 14);
 user_pref("font.size.monospace.x-western", 14);
