@@ -1,5 +1,32 @@
-[[mgr.prepend_keymap]]
-on   = [ ",", "l" ]
-run  = "linemode mdate_perm_own"
-desc = "Restore custom linemode (mdate+perm+own)"
+[mgr]
+prepend_keymap = [
+  { on = ["m", "c"], run = "linemode mdate_perm_own", desc = "Linemode: custom (mdate+perm+own)" },
+  { on = ["c", "m"], run = "plugin chmod", desc = "Chmod selected files [plugin]" },
+  { on = ["u", "i"], run = "plugin restore -- --interactive", desc = "Restore interactive [plugin]" },
+  { on = "+", run = "plugin zoom 1", desc = "Zoom in hovered file [plugin]" },
+  { on = "-", run = "plugin zoom -1", desc = "Zoom out hovered file [plugin]" },
+  { on = ["W", "p"], run = "plugin toggle-pane min-preview", desc = "Show/hide preview pane [plugin]" },
+  { on = ["W", "P"], run = "plugin toggle-pane max-preview", desc = "Maximize/restore preview pane [plugin]" },
+  { on = ["W", "r"], run = "plugin toggle-pane min-parent", desc = "Show/hide parent pane [plugin]" },
+  { on = ["W", "R"], run = "plugin toggle-pane max-parent", desc = "Maximize/restore parent pane [plugin]" },
+  { on = ["W", "c"], run = "plugin toggle-pane min-current", desc = "Show/hide current pane [plugin]" },
+  { on = ["W", "C"], run = "plugin toggle-pane max-current", desc = "Max/restore current pane [plugin]" },
+  { on = ["W", "n"], run = "plugin toggle-pane reset", desc = "Restore panes [plugin]" },
+  { on = "M", run = "plugin mount", desc = "Mount [plugin]" },
+  { on = ["g", "c"], run = "plugin vcs-files", desc = "Show git file changes [plugin]" },
+  { on = ["c", "a", "a"], run = "plugin compress", desc = "Archive selected files" },
+  { on = ["c", "a", "p"], run = "plugin compress -p", desc = "Archive selected files (password)" },
+  { on = ["c", "a", "h"], run = "plugin compress -ph", desc = "Archive selected files (password+header)" },
+  { on = ["c", "a", "l"], run = "plugin compress -l", desc = "Archive selected files (compression level)" },
+  { on = ["c", "a", "u"], run = "plugin compress -phl", desc = "Archive selected files (password+header+level)" },
+  { on = ["e", "t"], run = "plugin eza-preview", desc = "Toggle tree/list dir preview" },
+  { on = ["e", "+"], run = "plugin eza-preview inc-level", desc = "Increment tree level" },
+  { on = ["e", "-"], run = "plugin eza-preview dec-level", desc = "Decrement tree level" },
+  { on = ["e", "$"], run = "plugin eza-preview toggle-follow-symlinks", desc = "Toggle tree follow symlinks" },
+  { on = ["e", "*"], run = "plugin eza-preview toggle-hidden", desc = "Toggle hidden files" },
+  { on = ["e", "g", "i"], run = "plugin eza-preview toggle-git-ignore", desc = "Toggle .gitignore files" },
+  { on = ["e", "g", "s"], run = "plugin eza-preview toggle-git-status", desc = "Toggle showing git status" },
+  { on = ["c", "s"], run  = "plugin what-size", desc = "Calc size of selection or cwd" },
+  { on = ["R","b"], run = "plugin recycle-bin", desc = "Open Recycle Bin menu" },
+]
 
