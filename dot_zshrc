@@ -10,7 +10,9 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 
 export EDITOR=vim
 
-export PAGER=less
+if command -v less >/dev/null; then
+    export PAGER=less
+fi
 export LESS="-R -X -M -i"
 
 export VIRTUAL_ENV_DISABLE_PROMPT=0
