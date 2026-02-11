@@ -62,3 +62,5 @@ require("eza-preview"):setup({
 
 require("recycle-bin"):setup()
 
+require("duckdb"):setup()
+
