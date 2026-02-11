@@ -29,10 +29,15 @@ Copy `profiles.ini` to `~/.thunderbird.profiles.ini`.
 
 ### Step 3
 
-Move `user.js` to `~/.thunderbird/main/user.js`.
+Copy `user.js` to `~/.thunderbird/main/user.js`.
+
+```
+rsync -a --info=progress2 user.js ~/.thunderbird/main/user.js
+```
 
 ## Version B: use existing profile
 
 ### Step 1
 
-Move `user.js` to `~/.thunderbird/EXISTINGPROFILE/user.js`.
+Copy `user.js` to `~/.thunderbird/EXISTINGPROFILE/user.js`.
+
