@@ -1,0 +1,24 @@
+{
+  "diagnostic-languageserver.filetypes": {
+    "dockerfile": ["hadolint"],
+    "vim": ["vint"],
+    "yaml": ["yamllint"]
+  },
+  "diagnostic-languageserver.formatFiletypes": {
+    "dockerfile": ["dockerfmt"]
+  },
+  "diagnostic-languageserver.formatters": {
+    "dockerfmt": {
+      "args": ["--newline"],
+      "command": "dockerfmt",
+      "isStdout": true
+    }
+  },
+  "json.format.enable": false,
+  "pyright.organizeimports.provider": "ruff",
+  "python.analysis.typeCheckingMode": "standard",
+  "python.formatting.provider": "black",
+  "python.linting.ruffEnabled": true,
+  "yaml.format.enable": false,
+  "yank.highlight.duration": 1000
+}
