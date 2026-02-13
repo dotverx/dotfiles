@@ -1,4 +1,7 @@
 {
+  "yaml.schemas": {
+    "kubernetes": ["*.yaml", "*.yml"]
+  },
   "diagnostic-languageserver.filetypes": {
     "dockerfile": ["hadolint"],
     "vim": ["vint"],
