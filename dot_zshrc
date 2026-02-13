@@ -13,7 +13,7 @@ export EDITOR=vim
 if command -v less >/dev/null; then
     export PAGER=less
 fi
-export LESS="-R -X -M -i"
+export LESS="-R -M -i"
 
 export VIRTUAL_ENV_DISABLE_PROMPT=0
 function virtualenv_prompt_info {
