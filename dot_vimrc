@@ -246,15 +246,8 @@ nnoremap <silent><nowait> <leader>cp :<c-u>coclistresume<cr>
 if has('nvim-0.4.0') || has('patch-8.2.0750')
   nnoremap <silent><nowait><expr> <c-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<c-f>"
   nnoremap <silent><nowait><expr> <c-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<c-b>"
-  " in insert mode prefer scrolling the popup documentation text
-  inoremap <silent><nowait><expr> <c-f>
-    \ coc#pum#visible() ? coc#pum#scroll(1) :
-    \ coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" :
-    \ "\<right>"
-  inoremap <silent><nowait><expr> <c-b>
-    \ coc#pum#visible() ? coc#pum#scroll(0) :
-    \ coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" :
-    \ "\<left>"
+  inoremap <silent><nowait><expr> <c-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<right>"
+  inoremap <silent><nowait><expr> <c-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<left>"
   vnoremap <silent><nowait><expr> <c-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<c-f>"
   vnoremap <silent><nowait><expr> <c-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<c-b>"
 endif
