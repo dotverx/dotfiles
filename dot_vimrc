@@ -203,7 +203,18 @@ set nowritebackup
 " diagnostics appear/become resolved
 set signcolumn=yes
 
-inoremap <silent><expr> <f2> coc#refresh()
+inoremap <silent><expr> <C-n> coc#pum#visible() ? coc#pum#next(1) : coc#refresh()
+inoremap <silent><expr> <C-p> coc#pum#visible() ? coc#pum#prev(1) : coc#refresh()
+
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+  nnoremap <silent><nowait><expr> <f4> coc#float#has_scroll() ? coc#float#scroll(1) : "\<f4>"
+  nnoremap <silent><nowait><expr> <f3> coc#float#has_scroll() ? coc#float#scroll(0) : "\<f3>"
+  inoremap <silent><nowait><expr> <f4> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<f4>"
+  inoremap <silent><nowait><expr> <f3> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<f3>"
+  vnoremap <silent><nowait><expr> <f4> coc#float#has_scroll() ? coc#float#scroll(1) : "\<f4>"
+  vnoremap <silent><nowait><expr> <f3> coc#float#has_scroll() ? coc#float#scroll(0) : "\<f3>"
+endif
+
 nmap <silent> <leader>ln <plug>(coc-diagnostic-next)
 nmap <silent> <leader>lp <plug>(coc-diagnostic-prev)
 nmap <silent> <leader>ld <plug>(coc-definition)
@@ -223,16 +234,9 @@ nmap <silent> <leader>lre <plug>(coc-codeaction-refactor)
 xmap <silent> <leader>lrs <plug>(coc-codeaction-refactor-selected)
 nmap <silent> <leader>lrs <plug>(coc-codeaction-refactor-selected)
 nmap <leader>lL <plug>(coc-codelens-action)
-xmap if <plug>(coc-funcobj-i)
-omap if <plug>(coc-funcobj-i)
-xmap af <plug>(coc-funcobj-a)
-omap af <plug>(coc-funcobj-a)
-xmap ic <plug>(coc-classobj-i)
-omap ic <plug>(coc-classobj-i)
-xmap ac <plug>(coc-classobj-a)
-omap ac <plug>(coc-classobj-a)
 nmap <silent> <leader>lv <plug>(coc-range-select)
 xmap <silent> <leader>lv <plug>(coc-range-select)
+
 nnoremap <silent><nowait> <leader>cd :<c-u>coclist diagnostics<cr>
 nnoremap <silent><nowait> <leader>ce :<c-u>coclist extensions<cr>
 nnoremap <silent><nowait> <leader>cc :<c-u>coclist commands<cr>
@@ -242,14 +246,14 @@ nnoremap <silent><nowait> <leader>cj :<c-u>cocnext<cr>
 nnoremap <silent><nowait> <leader>ck :<c-u>cocprev<cr>
 nnoremap <silent><nowait> <leader>cp :<c-u>coclistresume<cr>
 
-if has('nvim-0.4.0') || has('patch-8.2.0750')
-  nnoremap <silent><nowait><expr> <f4> coc#float#has_scroll() ? coc#float#scroll(1) : "\<f4>"
-  nnoremap <silent><nowait><expr> <f3> coc#float#has_scroll() ? coc#float#scroll(0) : "\<f3>"
-  inoremap <silent><nowait><expr> <f4> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<f4>"
-  inoremap <silent><nowait><expr> <f3> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<f3>"
-  vnoremap <silent><nowait><expr> <f4> coc#float#has_scroll() ? coc#float#scroll(1) : "\<f4>"
-  vnoremap <silent><nowait><expr> <f3> coc#float#has_scroll() ? coc#float#scroll(0) : "\<f3>"
-endif
+xmap if <plug>(coc-funcobj-i)
+omap if <plug>(coc-funcobj-i)
+xmap af <plug>(coc-funcobj-a)
+omap af <plug>(coc-funcobj-a)
+xmap ic <plug>(coc-classobj-i)
+omap ic <plug>(coc-classobj-i)
+xmap ac <plug>(coc-classobj-a)
+omap ac <plug>(coc-classobj-a)
 
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
