@@ -242,14 +242,13 @@ nnoremap <silent><nowait> <leader>cj :<c-u>cocnext<cr>
 nnoremap <silent><nowait> <leader>ck :<c-u>cocprev<cr>
 nnoremap <silent><nowait> <leader>cp :<c-u>coclistresume<cr>
 
-" remap <c-f> and <c-b> to scroll float windows/popups
 if has('nvim-0.4.0') || has('patch-8.2.0750')
-  nnoremap <silent><nowait><expr> <c-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<c-f>"
-  nnoremap <silent><nowait><expr> <c-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<c-b>"
-  inoremap <silent><nowait><expr> <c-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<right>"
-  inoremap <silent><nowait><expr> <c-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<left>"
-  vnoremap <silent><nowait><expr> <c-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<c-f>"
-  vnoremap <silent><nowait><expr> <c-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<c-b>"
+  nnoremap <silent><nowait><expr> <f4> coc#float#has_scroll() ? coc#float#scroll(1) : "\<f4>"
+  nnoremap <silent><nowait><expr> <f3> coc#float#has_scroll() ? coc#float#scroll(0) : "\<f3>"
+  inoremap <silent><nowait><expr> <f4> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<f4>"
+  inoremap <silent><nowait><expr> <f3> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<f3>"
+  vnoremap <silent><nowait><expr> <f4> coc#float#has_scroll() ? coc#float#scroll(1) : "\<f4>"
+  vnoremap <silent><nowait><expr> <f3> coc#float#has_scroll() ? coc#float#scroll(0) : "\<f3>"
 endif
 
 function! ShowDocumentation()
