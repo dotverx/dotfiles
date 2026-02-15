@@ -121,21 +121,64 @@ endif
 
 filetype plugin indent on
 
-" if exists('*plug#begin')
-  call plug#begin()
-  Plug 'tpope/vim-commentary'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'mbbill/undotree'
-  call plug#end()
-" else
-"   echo '.vimrc: vim-plug not available'
-" endif
 
-" if exists('*coc#rpc#ready')
+let s:plugins_enabled = v:true
+if s:plugins_enabled
+" ===============
+" === plugins ===
+" ===============
+" <begin_config>
+
+" to disable a plugin comment it out here
+call plug#begin()
+Plug 'tpope/vim-commentary'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mbbill/undotree'
+call plug#end()
+
+
+" plugin is declared in plug.vim
+function! s:DeclaredPlug(name)
+  return exists('g:plugs') && has_key(g:plugs, a:name)
+endfunction
+
+" plugin is stored on disk
+function! s:RtpHas(relpath) abort
+  return !empty(globpath(&runtimepath, a:relpath))
+endfunction
+
+" plugin is loaded and a cmd is available
+function! s:CmdExists(cmd) abort
+  return exists(':' . a:cmd) == 2
+endfunction
+
+function! s:PluginAvailable(name, relpath, cmd)
+  return s:DeclaredPlug(a:name) && (s:RtpHas(a:relpath) || s:CmdExists(a:cmd))
+endfunction
+
+
+if s:PluginAvailable('vim-commentary', 'plugin/commentary.vim', 'Commentary')
+" ======================
+" === commentary.vim ===
+" ======================
+" <begin_config>
+
+" use the default 'gc' to comment
+
+" <end_config>
+" ======================
+" === commentary.vim ===
+" ======================
+else
+  echo '.vimrc: commentary not configured'
+endif
+
+
+if s:PluginAvailable('coc.nvim', 'plugin/coc.vim', 'CocInfo')
 " ================
 " === COC.NVIM ===
 " ================
-" <begin>
+" <begin_config>
 
 let g:coc_global_extensions = [
     \ 'coc-diagnostic',
@@ -288,21 +331,36 @@ command! -nargs=0 OR :call CocActionAsync('runCommand', 'editor.action.organizeI
 " provide custom statusline: lightline.vim, vim-airline
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" <end>
+" <end_config>
 " ================
 " === COC.NVIM ===
 " ================
-" else
-"   echo '.vimrc: coc.nvim not configured'
-" endif
+else
+  echo '.vimrc: coc.nvim not configured'
+endif
 
 
+" if s:CmdExists('UndotreeToggle') || s:RtpHas('plugin/undotree.vim')
+if s:PluginAvailable('undotree', 'plugin/undotree.vim', 'UndotreeToggle')
 " ================
 " === undotree ===
 " ================
-" <begin>
+" <begin_config>
+
 nnoremap <F5> :UndotreeToggle<CR>
-" <end>
+
+" <end_config>
 " ================
 " === undotree ===
 " ================
+else
+  echo '.vimrc: undotree not configured'
+endif
+
+
+" <end_config>
+" ===============
+" === plugins ===
+" ===============
+endif "s:plugins_enabled
+
