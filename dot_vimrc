@@ -134,6 +134,8 @@ call plug#begin()
 Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mbbill/undotree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 
@@ -355,6 +357,23 @@ nnoremap <F5> :UndotreeToggle<CR>
 " ================
 else
   echo '.vimrc: undotree not configured'
+endif
+
+
+if s:PluginAvailable('vim-airline', 'plugin/airline.vim', 'AirlineToggle')
+" ==================
+" === vim-airline ===
+" ==================
+" <begin_config>
+
+let g:airline_theme='distinguished'
+
+" <end_config>
+" ==================
+" === vim-airline ===
+" ==================
+else
+  echo '.vimrc: vim-airline not configured'
 endif
 
 
