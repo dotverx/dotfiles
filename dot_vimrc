@@ -230,6 +230,7 @@ nmap <leader>la <plug>(coc-codeaction-cursor)
 nmap <leader>lA <plug>(coc-codeaction-source)
 nmap <leader>lq <plug>(coc-fix-current)
 nnoremap <silent> <leader>lh :call ShowDocumentation()<cr>
+nnoremap <silent> <leader>lH <Plug>(coc-float-hide)
 nmap <silent> <leader>lre <plug>(coc-codeaction-refactor)
 xmap <silent> <leader>lrs <plug>(coc-codeaction-refactor-selected)
 nmap <silent> <leader>lrs <plug>(coc-codeaction-refactor-selected)
