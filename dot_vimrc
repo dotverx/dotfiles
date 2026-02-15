@@ -85,6 +85,7 @@ endif
 
 if has('persistent_undo')
     let s:candidates = []
+    " the first candidate will become the undodir
     if exists('$XDG_CACHE_HOME') && !empty($XDG_CACHE_HOME)
         call add(s:candidates, $XDG_CACHE_HOME . '/vim/undo')
     endif
@@ -124,6 +125,7 @@ filetype plugin indent on
   call plug#begin()
   Plug 'tpope/vim-commentary'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'mbbill/undotree'
   call plug#end()
 " else
 "   echo '.vimrc: vim-plug not available'
@@ -294,3 +296,13 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 "   echo '.vimrc: coc.nvim not configured'
 " endif
 
+
+" ================
+" === undotree ===
+" ================
+" <begin>
+nnoremap <F5> :UndotreeToggle<CR>
+" <end>
+" ================
+" === undotree ===
+" ================
