@@ -136,6 +136,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'moll/vim-bbye'
 call plug#end()
 
 
@@ -382,6 +383,29 @@ set noshowmode
 " ==================
 else
   echo '.vimrc: vim-airline not configured'
+endif
+
+
+if s:PluginAvailable('vim-bbye', 'plugin/bbye.vim', 'Bdelete')
+" ================
+" === vim-bbye ===
+" ================
+" <begin_config>
+
+" :Bw   -> :Bwipeout
+" :Bw!  -> :Bwipeout!
+command! -bang Bw Bwipeout<bang>
+
+" :Bd   -> :Bdelete
+" :Bd!  -> :Bdelete!
+command! -bang Bd Bdelete<bang>
+
+" <end_config>
+" ================
+" === vim-bbye ===
+" ================
+else
+  echo '.vimrc: bbye not configured'
 endif
 
 
