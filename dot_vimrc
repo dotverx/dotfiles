@@ -368,6 +368,14 @@ if s:PluginAvailable('vim-airline', 'plugin/airline.vim', 'AirlineToggle')
 
 let g:airline_theme='distinguished'
 
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#formatter='unique_tail_improved'
+let g:airline#extensions#tabline#show_buffers=1
+let g:airline#extensions#tabline#show_tabs=1
+
+" disable showing current mode in cmd line
+set noshowmode
+
 " <end_config>
 " ==================
 " === vim-airline ===
