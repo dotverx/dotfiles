@@ -56,8 +56,8 @@ set relativenumber
 " tree style
 let g:netrw_liststyle=3
 let g:netrw_banner=0
-" open file in the last non-netrw window
-let g:netrw_browse_split=4
+" open file by reusing the same (netrw) window
+let g:netrw_browse_split=0
 " splits open on the right
 let g:netrw_altv=1
 " show line numbers change default nonu to nu
