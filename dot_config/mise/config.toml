@@ -4,3 +4,9 @@ java = "latest"
 kubectl = "latest"
 maven = "latest"
 node = "latest"
+python = "latest"
+
+[settings]
+
+[settings.python]
+compile = true
