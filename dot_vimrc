@@ -137,6 +137,7 @@ Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'moll/vim-bbye'
+Plug 'psliwka/vim-smoothie'
 call plug#end()
 
 
@@ -408,6 +409,43 @@ else
   echo '.vimrc: bbye not configured'
 endif
 
+
+if s:PluginAvailable('vim-smoothie', 'plugin/smoothie.vim', '')
+" ====================
+" === vim-smoothie ===
+" ====================
+" <begin_config>
+
+" use to enable/disable
+" let g:smoothie_enabled=1
+
+" vim-smoothie overrides the following:
+" '<C-D>'
+" '<C-U>'
+" '<C-F>'
+" '<S-Down>'
+" '<PageDown>'
+" '<C-B>'
+" '<S-Up>'
+" '<PageUp>'
+" 'z+'
+" 'z^'
+" 'zt'
+" 'z<CR>'
+" 'z.'
+" 'zz'
+" 'z-'
+" 'zb'
+" use to prevent overriding the defaults
+" let g:smoothie_no_default_mappings=1
+
+" <end_config>
+" ====================
+" === vim-smoothie ===
+" ====================
+else
+  echo '.vimrc: smoothie not configured'
+endif
 
 " <end_config>
 " ===============
