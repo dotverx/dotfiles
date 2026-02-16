@@ -85,6 +85,10 @@ if !empty(globpath(&rtp, 'colors/habamax.vim'))
   colorscheme habamax
 elseif !empty(globpath(&rtp, 'colors/slate.vim'))
   colorscheme slate
+elseif !empty(globpath(&rtp, 'colors/industry.vim'))
+  colorscheme industry
+elseif !empty(globpath(&rtp, 'colors/darkblue.vim'))
+  colorscheme darkblue
 end
 
 if has('persistent_undo')
