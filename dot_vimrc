@@ -32,8 +32,8 @@ set hidden
 set autoread
 set confirm
 
-set scrolloff=2
-set sidescrolloff=2
+set scrolloff=0
+set sidescrolloff=0
 
 set ignorecase
 set smartcase
