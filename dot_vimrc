@@ -427,6 +427,24 @@ if s:PluginAvailable('vim-smoothie', 'plugin/smoothie.vim', '')
 " use to enable/disable
 " let g:smoothie_enabled=1
 
+" Time (in milliseconds) between subsequent screen/cursor position updates.
+" Lower value produces smoother animation.  Might be useful to increase it
+" when running Vim over low-bandwidth/high-latency connections.
+let g:smoothie_update_interval=15
+
+" This value controls constant term of the velocity curve. Increasing this
+" boosts primarily cursor speed at the end of animation.
+let g:smoothie_speed_constant_factor=35
+
+" This value controls linear term of the velocity curve. Increasing this
+" boosts primarily cursor speed at the beginning of animation.
+let g:smoothie_speed_linear_factor=10
+
+" This value controls exponent of the power function in the velocity curve.
+" Generally should be less or equal to 1.0. Lower values produce longer but
+" perceivably smoother animation.
+let g:smoothie_speed_exponentiation_factor=0.8
+
 " vim-smoothie overrides the following:
 " '<C-D>'
 " '<C-U>'
