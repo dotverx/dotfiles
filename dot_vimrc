@@ -156,6 +156,7 @@ function! s:DeclaredPlug(name)
 endfunction
 
 " plugin is stored on disk
+" .vim/plugged/NAME1/plugin/NAME2.vim
 function! s:RtpHas(relpath) abort
   return !empty(globpath(&runtimepath, a:relpath))
 endfunction
@@ -475,7 +476,7 @@ else
 endif
 
 
-if s:PluginAvailable('vim-which-key', 'plugin/which-key.vim', 'WhichKey')
+if s:PluginAvailable('vim-which-key', 'plugin/which_key.vim', 'WhichKey')
 " ======================
 " === vim-which-key  ===
 " ======================
