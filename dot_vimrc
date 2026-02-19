@@ -295,14 +295,14 @@ nmap <leader>lL <plug>(coc-codelens-action)
 nmap <silent> <leader>lv <plug>(coc-range-select)
 xmap <silent> <leader>lv <plug>(coc-range-select)
 
-nnoremap <silent><nowait> <leader>cd :<c-u>coclist diagnostics<cr>
-nnoremap <silent><nowait> <leader>ce :<c-u>coclist extensions<cr>
-nnoremap <silent><nowait> <leader>cc :<c-u>coclist commands<cr>
-nnoremap <silent><nowait> <leader>co :<c-u>coclist outline<cr>
-nnoremap <silent><nowait> <leader>cs :<c-u>coclist -i symbols<cr>
-nnoremap <silent><nowait> <leader>cj :<c-u>cocnext<cr>
-nnoremap <silent><nowait> <leader>ck :<c-u>cocprev<cr>
-nnoremap <silent><nowait> <leader>cp :<c-u>coclistresume<cr>
+nnoremap <silent><nowait> <leader>cd :<c-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <leader>ce :<c-u>CocList extensions<cr>
+nnoremap <silent><nowait> <leader>cc :<c-u>CocList commands<cr>
+nnoremap <silent><nowait> <leader>co :<c-u>CocList outline<cr>
+nnoremap <silent><nowait> <leader>cs :<c-u>CocList -I symbols<cr>
+nnoremap <silent><nowait> <leader>cj :<c-u>CocNext<cr>
+nnoremap <silent><nowait> <leader>ck :<c-u>CocPrev<cr>
+nnoremap <silent><nowait> <leader>cp :<c-u>CocListResume<cr>
 
 xmap if <plug>(coc-funcobj-i)
 omap if <plug>(coc-funcobj-i)
