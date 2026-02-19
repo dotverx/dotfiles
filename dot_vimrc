@@ -146,6 +146,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'moll/vim-bbye'
 Plug 'psliwka/vim-smoothie'
+Plug 'liuchengxu/vim-which-key'
 call plug#end()
 
 
@@ -472,6 +473,27 @@ let g:smoothie_speed_exponentiation_factor=0.8
 else
   echo '.vimrc: smoothie not configured'
 endif
+
+
+if s:PluginAvailable('vim-which-key', 'plugin/which-key.vim', 'WhichKey')
+" ======================
+" === vim-which-key  ===
+" ======================
+" <begin_config>
+
+nnoremap <silent> <leader> :<c-u>WhichKey '<space>'<CR>
+vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey '<space>'<CR>
+vnoremap <silent> <localleader> :<c-u>WhichKeyVisual '<space>'<CR>
+
+" <end_config>
+" ======================
+" === vim-which-key  ===
+" ======================
+else
+  echo '.vimrc: which-key not configured'
+endif
+
 
 " <end_config>
 " ===============
