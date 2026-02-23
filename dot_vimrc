@@ -8,7 +8,10 @@ onoremap <space> <nop>
 set encoding=utf-8
 
 set list
-set listchars=tab:>\|,trail:\|,lead:\|,nbsp:\|,precedes:<,extends:>
+set listchars=tab:>\|,trail:\|,nbsp:\|,precedes:<,extends:>
+if has('patch-8.2.2454')
+    set listchars+=lead:\|
+endif
 set smartindent
 set smarttab
 set autoindent
