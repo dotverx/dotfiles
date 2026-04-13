@@ -6,6 +6,8 @@ source $ZSH/oh-my-zsh.sh
 
 # eval "$(mise activate zsh)"
 
+set -o vi
+
 export XDG_CONFIG_HOME="${HOME}/.config"
 
 export EDITOR=vim
