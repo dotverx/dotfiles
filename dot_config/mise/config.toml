@@ -9,4 +9,4 @@ python = "latest"
 [settings]
 
 [settings.python]
-compile = true
+compile = false
