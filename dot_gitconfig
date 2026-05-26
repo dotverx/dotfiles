@@ -9,4 +9,34 @@
 
 [alias]
     difft = -c diff.external=difft diff
+    lg = log --graph --oneline --decorate --left-right --date=short --pretty=format:'%C(auto)%h %C(dim)%ad %C(cyan)%an%C(auto)%d %s'
+    lgs = lg --stat
+    lga = lg --all
+    lgas = lg --all --stat
+    lgsa = lgas
+
+[pull]
+    ff = only
+
+[fetch]
+    prune = true
+
+[diff]
+    tool = vimdiff
+
+[difftool]
+    prompt = false
+
+[difftool "vimdiff"]
+    cmd = vimdiff \"$LOCAL\" \"$REMOTE\"
+
+[merge]
+    tool = vimdiff
+
+[mergetool]
+    prompt = false
+    keepBackup = false
+
+[mergetool "vimdiff"]
+    cmd = vimdiff \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 
