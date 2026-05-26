@@ -62,11 +62,49 @@ cht () {
     # change spaces to + for request
     # it breaks on special characters ?#%&
     local q="${*// /+}"
-    local url="https://cht.sh" 
+    local url="https://cht.sh"
     if [[ -t 1 ]] && command -v less >/dev/null; then
         curl -fsSL "${url}/${q}" | less -R
     else
         curl -fsSL "${url}/${q}"
     fi
+}
+
+function create_python_env() {
+    set -euo pipefail
+    local MISE_FILE="mise.toml"
+    if [[ -e "${MISE_FILE}" ]]; then
+        printf "%s\n" "${MISE_FILE} already exists"
+        return 1
+    fi
+    local POETRY_VERSION="2.4.1"
+    local PYTHON_VERSION="3.14.5"
+    cat > "${MISE_FILE}" <<EOF
+[tools]
+poetry = { version = "${POETRY_VERSION}" }
+python = "${PYTHON_VERSION}"
+
+[env]
+MISE_POETRY_VENV_AUTO = 1
+MISE_POETRY_AUTO_INSTALL = 1
+_.python.venv = { path = ".venv", create = true }
+EOF
+    printf "%s\n" "Created ${MISE_FILE}:"
+    cat "${MISE_FILE}"
+    cat << 'EOF'
+
+Run:
+mise trust
+mise install
+poetry init
+
+Then add to pyproject.toml:
+[tool.poetry]
+package-mode = false
+
+Then run:
+poetry install
+
+EOF
 }
 
