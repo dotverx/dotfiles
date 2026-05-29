@@ -150,6 +150,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'moll/vim-bbye'
 Plug 'psliwka/vim-smoothie'
 Plug 'liuchengxu/vim-which-key'
+Plug 'tpope/vim-eunuch'
 call plug#end()
 
 
@@ -510,3 +511,32 @@ endif
 " ===============
 endif "s:plugins_enabled
 
+if s:PluginAvailable('vim-eunuch', 'plugin/eunuch.vim', 'Chmod')
+" ==================
+" === eunuch.vim ===
+" ==================
+" <begin_config>
+
+" :Remove
+" :Delete
+" :Rename
+" :Copy
+" :Duplicate
+" :Move
+" :Chmod
+" :Mkdir
+" :Cfind
+" :Clocate
+" :Lfind
+" :Llocate
+" :Wall
+" :SudoWrite
+" :SudoEdit
+
+" <end_config>
+" ==================
+" === eunuch.vim ===
+" ==================
+else
+  echo '.vimrc: eunuch not configured'
+endif
