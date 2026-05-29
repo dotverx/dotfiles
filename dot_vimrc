@@ -206,6 +206,7 @@ let g:coc_global_extensions = [
     \ 'coc-lua',
     \ 'coc-pyright',
     \ 'coc-sh',
+    \ 'coc-sql',
     \ 'coc-vimlsp',
     \ 'coc-yank',
     \ 'coc-yaml',
@@ -238,6 +239,10 @@ let g:coc_global_extensions = [
 " - LSP:        coc-sh
 " - linting:    shellcheck via coc-sh
 " - formatting: shfmt via coc-sh
+" SQL
+" - LSP:        -
+" - linting:    coc-sql (postgresql dialect)
+" - formatting: coc-sql
 " VimScript:
 " - LSP:        coc-vimlsp
 " - linting:    vint via coc-diagnostic

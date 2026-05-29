@@ -29,6 +29,7 @@
     "python.analysis.typeCheckingMode": "standard",
     "python.formatting.provider": "black",
     "python.linting.ruffEnabled": true,
+    "sql.database": "postgresql",
     "yaml.format.enable": false,
     "yaml.schemas": {
         "kubernetes": []
