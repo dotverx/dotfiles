@@ -216,7 +216,7 @@ let g:coc_global_extensions = [
 " - LSP:        coc-docker
 " - linting:    hadolint via coc-diagnostic
 " - formatting: dockerfmt via coc-diagnostic
-" Golang:
+" Golang
 " - LSP:        TODO
 " - linting:    TODO
 " - formatting: TODO
@@ -243,15 +243,15 @@ let g:coc_global_extensions = [
 " - LSP:        -
 " - linting:    coc-sql (postgresql dialect)
 " - formatting: coc-sql
-" VimScript:
+" VimScript
 " - LSP:        coc-vimlsp
 " - linting:    vint via coc-diagnostic
 " - formatting: -
-" TOML:
+" TOML
 " - LSP:        TODO
 " - linting:    TODO
 " - formatting: TODO
-" XML:
+" XML
 " - LSP:        TODO
 " - linting:    TODO
 " - formatting: TODO
