@@ -7,6 +7,9 @@
 [init]
     defaultBranch = main
 
+[commit]
+    verbose = 1
+
 [alias]
     difft = -c diff.external=difft diff
     lg = log --graph --oneline --decorate --left-right --date=short --pretty=format:'%C(auto)%h %C(dim)%ad %C(cyan)%an%C(auto)%d %s'
@@ -39,4 +42,3 @@
 
 [mergetool "vimdiff"]
     cmd = vimdiff \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
-
