@@ -31,11 +31,7 @@
     "python.linting.ruffEnabled": true,
     "yaml.format.enable": false,
     "yaml.schemas": {
-        "kubernetes": [
-            "*.yaml",
-            "*.yml"
-        ],
-        "yaml.kubernetesCRDStore.enable": true
+        "kubernetes": []
     },
     "yank.highlight.duration": 1000
 }
