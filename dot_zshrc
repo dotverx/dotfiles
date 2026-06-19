@@ -12,6 +12,8 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 
 export EDITOR=vim
 
+export SBX_NO_TELEMETRY=1
+
 if command -v less >/dev/null; then
     export PAGER=less
 fi
