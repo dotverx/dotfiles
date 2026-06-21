@@ -14,6 +14,8 @@ export EDITOR=vim
 
 export SBX_NO_TELEMETRY=1
 
+ export PATH="$HOME/.local/bin:$PATH"
+
 if command -v less >/dev/null; then
     export PAGER=less
 fi
