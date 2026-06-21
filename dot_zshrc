@@ -41,6 +41,7 @@ bindkey '^[[1;5C' forward-word
 
 alias k=kubectl
 alias h=helm
+alias i=incus
 
 yazi() {
     set -- "$@" --cwd-file "$(mktemp -t yazi-cwd.XXXXXX)"
