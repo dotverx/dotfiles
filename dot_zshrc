@@ -39,6 +39,16 @@ setup_venv
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+# vim normal mode: k/j search by the typed prefix
+bindkey -M vicmd 'k' up-line-or-beginning-search
+bindkey -M vicmd 'j' down-line-or-beginning-search
+# make arrow keys behave the same in normal mode
+bindkey -M vicmd $'\e[A' up-line-or-beginning-search
+bindkey -M vicmd $'\e[B' down-line-or-beginning-search
+
 alias k=kubectl
 alias h=helm
 alias i=incus
