@@ -1,0 +1,11 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/bookmarks
+
+- Bookmarks:
+    - Hacker News:
+        - abbr: HN
+          href: https://news.ycombinator.com/best
+    - Paper2Audio:
+        - abbr: PA
+          href: https://www.paper2audio.com/docs

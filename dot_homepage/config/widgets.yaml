@@ -1,0 +1,29 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/info-widgets/
+
+- datetime:
+    text_size: 2xl
+    format:
+      day: numeric
+      month: long
+      weekday: long
+      hour: numeric
+      minute: numeric
+      second: numeric
+      hour12: false
+
+- resources:
+    cpu: true
+    memory: true
+    disk: /
+    cputemp: true
+    tempmin: 30
+    tempmax: 100
+    units: metric
+
+- search:
+    provider: custom
+    url: "https://search.brave.com/search?country=pl&lang=en-US&safesearch=off&summary=0&q="
+    target: _blank
+

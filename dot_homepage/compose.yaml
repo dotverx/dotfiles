@@ -1,0 +1,13 @@
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    ports:
+      - "127.0.0.1:12324:3000"
+    volumes:
+      - "./config:/app/config"
+    environment:
+      HOMEPAGE_ALLOWED_HOSTS: "localhost:12324,127.0.0.1:12324"
+      PUID: "1000"
+      PGID: "1000"
+    restart: unless-stopped
