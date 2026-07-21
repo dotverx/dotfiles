@@ -53,6 +53,9 @@ alias k=kubectl
 alias h=helm
 alias i=incus
 
+alias ls="ls -AF --color=auto --group-directories-first"
+alias lr="ls -R"
+
 yazi() {
     set -- "$@" --cwd-file "$(mktemp -t yazi-cwd.XXXXXX)"
     command yazi "$@"
