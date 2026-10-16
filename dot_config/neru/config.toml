@@ -83,10 +83,17 @@ indicator = "Mouse"
 "l" = "action move_mouse_relative --dx 10 --dy 0"
 
 # finer movement
-"Shift+H" = "action move_mouse_relative --dx -2 --dy 0"
-"Shift+J" = "action move_mouse_relative --dx 0 --dy 2"
-"Shift+K" = "action move_mouse_relative --dx 0 --dy -2"
-"Shift+L" = "action move_mouse_relative --dx 2 --dy 0"
+"Ctrl+H" = "action move_mouse_relative --dx -2 --dy 0"
+"Ctrl+J" = "action move_mouse_relative --dx 0 --dy 2"
+"Ctrl+K" = "action move_mouse_relative --dx 0 --dy -2"
+"Ctrl+L" = "action move_mouse_relative --dx 2 --dy 0"
+
+# faster movement
+"Shift+H" = "action move_mouse_relative --dx -40 --dy 0"
+"Shift+J" = "action move_mouse_relative --dx 0 --dy 40"
+"Shift+K" = "action move_mouse_relative --dx 0 --dy -40"
+"Shift+L" = "action move_mouse_relative --dx 40 --dy 0"
+
 
 "m" = "action left_click"
 "," = "action middle_click"
