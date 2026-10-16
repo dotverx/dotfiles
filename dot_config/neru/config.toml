@@ -43,12 +43,14 @@ text = "#E8EEFF"
 # Global hotkeys are disabled by default on Linux to avoid conflicts with
 # terminal and application shortcuts (e.g. Ctrl+Shift+C / copy).
 # Uncomment to enable, or bind \`neru <mode>` in your DE/WM.
-# [hotkeys]
+[hotkeys]
 # "Primary+Shift+Space" = "hints"
 # "Primary+Shift+G" = "grid"
 # "Primary+Shift+C" = "recursive_grid"
 # "Primary+Shift+B" = "bisect"
 # "Primary+Shift+S" = "scroll"
+"Super+C" = "grid --toggle --cursor-selection-mode follow"
+"Super+V" = "mode mouse --toggle"
 
 # Macros
 # See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#macros
@@ -70,6 +72,30 @@ text = "#E8EEFF"
 # "h" = "exec yabai -m window --focus west"
 # "l" = "exec yabai -m window --focus east"
 # "s" = "scroll"
+
+[modes.mouse]
+indicator = "Mouse"
+
+[modes.mouse.hotkeys]
+"h" = "action move_mouse_relative --dx -10 --dy 0"
+"j" = "action move_mouse_relative --dx 0 --dy 10"
+"k" = "action move_mouse_relative --dx 0 --dy -10"
+"l" = "action move_mouse_relative --dx 10 --dy 0"
+
+# finer movement
+"Shift+H" = "action move_mouse_relative --dx -2 --dy 0"
+"Shift+J" = "action move_mouse_relative --dx 0 --dy 2"
+"Shift+K" = "action move_mouse_relative --dx 0 --dy -2"
+"Shift+L" = "action move_mouse_relative --dx 2 --dy 0"
+
+"m" = "action left_click"
+"," = "action middle_click"
+"." = "action right_click"
+"v" = "action left_click --toggle"
+"n" = ["action left_click", "idle"]
+"g" = "grid --toggle --cursor-selection-mode follow"
+"Escape" = "idle"
+
 #
 # [hotkeys]
 # "Primary+Shift+W" = "mode window"
@@ -79,7 +105,7 @@ text = "#E8EEFF"
 # reference lists for it, such as NERU_MODE or NERU_BUNDLE_ID.
 # See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#hooks
 #
-# [hooks]
+[hooks]
 # on_mode_enter = "exec sketchybar --trigger neru_mode MODE=\"$NERU_MODE\""
 # on_mode_exit = "exec sketchybar --trigger neru_mode MODE=idle"
 # on_select = []                        # NERU_MODE, NERU_ACTION, NERU_X, NERU_Y
@@ -98,6 +124,7 @@ text = "#E8EEFF"
 # on_screen_change = []
 # on_ready = []
 # on_quit = []                          # exec steps only, waited on for one second
+on_select = ["idle", "mode mouse"]
 
 # Hint mode
 # See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#hints
@@ -504,7 +531,7 @@ indicator_y_offset = 20
 # Smooth cursor
 # See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#smooth_cursor
 [smooth_cursor]
-move_mouse_enabled = false
+move_mouse_enabled = true
 steps = 10
 max_duration = 200                          # ms
 duration_per_pixel = 0.1                    # ms per px
@@ -521,7 +548,7 @@ duration_per_pixel = 1.00                   # ms per px
 # Held-key repeat
 # See https://github.com/y3owk1n/neru/blob/main/docs/reference/configuration.md#held_repeat
 [held_repeat]
-enabled = false
+enabled = true
 initial_delay_ms = 50
 interval_ms = 50
 accel_enabled = false
