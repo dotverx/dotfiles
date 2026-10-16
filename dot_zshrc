@@ -23,13 +23,13 @@ export LESS="-R -M -i"
 
 export VIRTUAL_ENV_DISABLE_PROMPT=0
 function virtualenv_prompt_info {
-    [ "$VIRTUAL_ENV" ] && echo "[$VIRTUAL_ENV] "
+    [[ -n "${VIRTUAL_ENV:-}" ]] && echo "[$VIRTUAL_ENV] "
 }
 
 setup_venv() {
-    if [[ -n "${VIRTUAL_ENV}" && -d "${VIRTUAL_ENV}/bin" ]]; then
+    if [[ -n "${VIRTUAL_ENV:-}" && -d "${VIRTUAL_ENV}/bin" ]]; then
         . "${VIRTUAL_ENV}"/bin/activate
-    elif [[ -z "${VIRTUAL_ENV}" ]] && command -v deactivate > /dev/null; then
+    elif [[ -z "${VIRTUAL_ENV:-}" ]] && command -v deactivate > /dev/null; then
         deactivate
     fi
 }
