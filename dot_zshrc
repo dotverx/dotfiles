@@ -15,6 +15,10 @@ export SBX_NO_TELEMETRY=1
 
 export PATH="$HOME/.local/bin:$PATH"
 
+if command -v coi >/dev/null 2>&1; then
+    source <(coi completion zsh)
+fi
+
 if command -v less >/dev/null; then
     export PAGER=less
 fi
