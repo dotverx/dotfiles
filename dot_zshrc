@@ -95,3 +95,7 @@ chezmoi-print () {
 pull-coi () {
     git clone --depth 1 https://github.com/dotverx/coi-repo.git
 }
+
+pull-python () {
+    git clone --depth 1 https://github.com/dotverx/python-repo.git
+}
