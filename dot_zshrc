@@ -25,15 +25,15 @@ function virtualenv_prompt_info {
     [[ -n "${VIRTUAL_ENV:-}" ]] && echo "[$VIRTUAL_ENV] "
 }
 
-setup_venv() {
-    if [[ -n "${VIRTUAL_ENV:-}" && -d "${VIRTUAL_ENV}/bin" ]]; then
-        . "${VIRTUAL_ENV}"/bin/activate
-    elif [[ -z "${VIRTUAL_ENV:-}" ]] && command -v deactivate > /dev/null; then
-        deactivate
-    fi
-}
-add-zsh-hook chpwd setup_venv
-setup_venv
+# setup_venv() {
+#     if [[ -n "${VIRTUAL_ENV:-}" && -d "${VIRTUAL_ENV}/bin" ]]; then
+#         . "${VIRTUAL_ENV}"/bin/activate
+#     elif [[ -z "${VIRTUAL_ENV:-}" ]] && command -v deactivate > /dev/null; then
+#         deactivate
+#     fi
+# }
+# add-zsh-hook chpwd setup_venv
+# setup_venv
 
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
