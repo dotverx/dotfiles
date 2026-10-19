@@ -9,8 +9,6 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 
 export EDITOR=vim
 
-export SBX_NO_TELEMETRY=1
-
 export PATH="$HOME/.local/bin:$PATH"
 
 if command -v coi >/dev/null 2>&1; then
