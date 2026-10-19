@@ -90,3 +90,8 @@ cht () {
         curl -fsSL "${url}/${q}"
     fi
 }
+
+chezmoi-print () {
+    printf '%s\n' \
+        'sh -c "$(curl -fsLS https://get.chezmoi.io)" -- init --apply https://github.com/dotverx/dotfiles.git'
+}
