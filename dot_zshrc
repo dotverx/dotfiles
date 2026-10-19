@@ -3,8 +3,6 @@ ZSH_THEME="my-frisk"
 plugins=(git direnv virtualenv mise)
 source $ZSH/oh-my-zsh.sh
 
-# eval "$(mise activate zsh)"
-
 set -o vi
 
 export XDG_CONFIG_HOME="${HOME}/.config"
