@@ -95,3 +95,7 @@ chezmoi-print () {
     printf '%s\n' \
         'sh -c "$(curl -fsLS https://get.chezmoi.io)" -- init --apply https://github.com/dotverx/dotfiles.git'
 }
+
+pull-coi () {
+    git clone --depth 1 https://github.com/dotverx/coi-repo.git
+}
